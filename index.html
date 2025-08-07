@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gouvernorat du District de Bamako</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('director.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .active-section {
+            color: #1d4ed8;
+            font-weight: bold;
+            border-bottom: 2px solid #1d4ed8;
+        }
+        
+        .logo-large {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .governor-image {
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* Gestion des erreurs d'images */
+        img {
+            transition: opacity 0.3s ease;
+        }
+        
+        img[src*="error"], img:not([src]) {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="logo.jpg" alt="Logo Gouvernorat" class="logo-large mr-3">
+               
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-blue-900">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#accueil" class="nav-link hover:text-blue-700 active-section">Accueil</a></li>
+                    <li><a href="#apropos" class="nav-link hover:text-blue-700">À Propos</a></li>
+                    <li><a href="#missions" class="nav-link hover:text-blue-700">Nos Missions</a></li>
+                    <li><a href="#bibliotheques" class="nav-link hover:text-blue-700">Bibliothèques & Archives</a></li>
+                    <li><a href="#vision" class="nav-link hover:text-blue-700">Notre Vision</a></li>
+                    <li><a href="#contact" class="nav-link hover:text-blue-700">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <ul class="space-y-2">
+                <li><a href="#accueil" class="block py-2 hover:text-blue-700">Accueil</a></li>
+                <li><a href="#apropos" class="block py-2 hover:text-blue-700">À Propos</a></li>
+                <li><a href="#missions" class="block py-2 hover:text-blue-700">Nos Missions</a></li>
+                <li><a href="#bibliotheques" class="block py-2 hover:text-blue-700">Bibliothèques & Archives</a></li>
+                <li><a href="#vision" class="block py-2 hover:text-blue-700">Notre Vision</a></li>
+                <li><a href="#contact" class="block py-2 hover:text-blue-700">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Bienvenue au Gouvernorat du District de Bamako</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Autorité administrative déconcentrée de l'État, le Gouvernorat du District de Bamako incarne la présence de l'État au cœur de la capitale malienne.</p>
+            <a href="#apropos" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">En savoir plus</a>
+        </div>
+    </section>
+
+    <!-- Mot du Gouverneur -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 md:pr-8">
+                    <img src="director.jpg" alt="Gouverneur Abdoulaye Coulibaly" class="rounded-lg shadow-lg w-full max-w-xs mx-auto governor-image">
+                    <h3 class="text-center mt-4 text-xl font-semibold">Gouverneur Abdoulaye Coulibaly</h3>
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Mot du Gouverneur</h2>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-700 mb-4">Chères citoyennes, chers citoyens,</p>
+                        <p class="text-gray-700 mb-4">C'est avec un grand sens du devoir et une profonde conviction que j'assume la responsabilité de Gouverneur du District de Bamako, capitale de notre pays et cœur battant de la vie nationale.</p>
+                        <p class="text-gray-700 mb-4">Notre engagement au Gouvernorat est clair : servir la population, renforcer l'autorité de l'État, et accompagner le développement local dans un esprit de justice, de transparence et de proximité.</p>
+                        <p class="text-gray-700 mb-4">Bamako, ville en pleine croissance, fait face à de nombreux défis : urbanisation rapide, accès aux services de base, sécurité, environnement, emploi des jeunes… Face à ces enjeux, nous devons construire une gouvernance moderne, participative et efficace, au service de tous les citoyens, sans distinction.</p>
+                        <p class="text-gray-700 font-semibold">Je reste convaincu que c'est ensemble – institutions, collectivités, société civile, secteur privé et citoyens – que nous pourrons bâtir un Bamako plus propre, plus sûr, plus solidaire et plus prospère.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À Propos -->
+    <section id="apropos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">À Propos de Nous</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="logo.jpg" alt="Bamako" class="rounded-lg shadow-lg w-full h-auto about-image">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Le Gouvernorat du District de Bamako</h3>
+                    <p class="text-gray-700 mb-4">Sous l'autorité du Ministère de l'Administration Territoriale et de la Décentralisation, le Gouvernorat assure la coordination, la supervision et le suivi des actions des services publics au niveau local.</p>
+                    <p class="text-gray-700 mb-4">Nous travaillons en étroite collaboration avec les six communes du District pour répondre aux besoins des populations et renforcer la gouvernance de proximité.</p>
+                    <p class="text-gray-700 mb-6">Notre mission principale est de veiller à l'application des lois et règlements de la République tout en garantissant la sécurité, la paix et la cohésion sociale dans la capitale.</p>
+                    <div class="bg-blue-100 p-4 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-blue-800 font-medium">"Une capitale dynamique, un gouvernorat engagé pour le développement et le bien-être de tous les citoyens."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Missions -->
+    <section id="missions" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Nos Missions</h2>
+            <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12">Le Gouvernorat œuvre au quotidien pour le développement et le bien-être des habitants du District de Bamako à travers plusieurs missions clés.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="mission-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-balance-scale text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-900">Application des lois</h3>
+                    <p class="text-gray-700">Veiller à l'application des lois et règlements de la République sur l'ensemble du territoire du District.</p>
+                </div>
+                
+                <div class="mission-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-users-cog text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-900">Coordination des services</h3>
+                    <p class="text-gray-700">Coordonner les actions des services déconcentrés de l'État pour une meilleure efficacité administrative.</p>
+                </div>
+                
+                <div class="mission-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-hands-helping text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-900">Accompagnement</h3>
+                    <p class="text-gray-700">Encadrer et accompagner les collectivités territoriales du District dans leurs missions de service public.</p>
+                </div>
+                
+                <div class="mission-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-shield-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-900">Sécurité et paix</h3>
+                    <p class="text-gray-700">Garantir la sécurité, la paix et la cohésion sociale dans la capitale malienne.</p>
+                </div>
+                
+                <div class="mission-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-seedling text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-900">Développement durable</h3>
+                    <p class="text-gray-700">Soutenir les initiatives de développement local durable pour améliorer le cadre de vie des citoyens.</p>
+                </div>
+                
+                <div class="mission-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-handshake text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-900">Dialogue social</h3>
+                    <p class="text-gray-700">Faciliter le dialogue entre les différentes parties prenantes pour une gouvernance inclusive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bibliothèques & Archives -->
+    <section id="bibliotheques" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Bibliothèques & Archives</h2>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-blue-800 mb-6">Découvrez notre patrimoine documentaire</h3>
+                <p class="text-gray-700 mb-6">Le Gouvernorat du District de Bamako met à disposition des citoyens, chercheurs et institutions diverses ressources documentaires et archives administratives.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold mb-3 text-blue-900">Bibliothèque Administrative</h4>
+                        <p class="text-gray-700 mb-4">Collection spécialisée dans les textes juridiques, rapports administratifs et documents officiels relatifs à la gestion du District.</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li><i class="fas fa-clock text-blue-700 mr-2"></i> Horaires: Lundi-Vendredi, 8h-16h</li>
+                            <li><i class="fas fa-map-marker-alt text-blue-700 mr-2"></i> Localisation: Siège du Gouvernorat</li>
+                            <li><i class="fas fa-phone text-blue-700 mr-2"></i> Contact: +223 20 23 99 71</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold mb-3 text-blue-900">Archives du District</h4>
+                        <p class="text-gray-700 mb-4">Conservation et mise à disposition des documents historiques et administratifs du District de Bamako.</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li><i class="fas fa-clock text-blue-700 mr-2"></i> Horaires: Sur rendez-vous</li>
+                            <li><i class="fas fa-map-marker-alt text-blue-700 mr-2"></i> Localisation: Annexe du Gouvernorat</li>
+                            <li><i class="fas fa-envelope text-blue-700 mr-2"></i> Email: archives@gouv-bamako.ml</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-semibold text-blue-800 mb-6 text-center">Galerie des Archives</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="images/1.jpg" alt="Archive 1" class="gallery-image">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="images/2.jpg" alt="Archive 2" class="gallery-image">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="images/3.jpg" alt="Archive 3" class="gallery-image">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="images/4.jpg" alt="Archive 4" class="gallery-image">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="images/5.jpg" alt="Archive 5" class="gallery-image">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="images/6.jpg" alt="Archive 6" class="gallery-image">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="images/7.jpg" alt="Archive 7" class="gallery-image">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="logo.jpg" alt="Logo Gouvernorat" class="gallery-image">
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">Voir plus d'archives</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Vision -->
+    <section id="vision" class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Notre Vision</h2>
+            
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <p class="text-xl mb-6">"Faire du District de Bamako une capitale moderne, bien gouvernée, résiliente et tournée vers l'avenir, au service de tous ses habitants."</p>
+                <p class="text-blue-200">En tant que capitale du Mali, Bamako est un centre névralgique de développement économique, social et culturel.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-blue-800 p-6 rounded-lg">
+                    <div class="text-yellow-400 mb-4 text-4xl">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Capitale moderne</h3>
+                    <p class="text-blue-100">Développer des infrastructures modernes et adaptées aux besoins d'une capitale dynamique du 21ème siècle.</p>
+                </div>
+                
+                <div class="bg-blue-800 p-6 rounded-lg">
+                    <div class="text-yellow-400 mb-4 text-4xl">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Service public efficace</h3>
+                    <p class="text-blue-100">Mettre en place une administration performante, transparente et au service des citoyens.</p>
+                </div>
+                
+                <div class="bg-blue-800 p-6 rounded-lg">
+                    <div class="text-yellow-400 mb-4 text-4xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Cohésion sociale</h3>
+                    <p class="text-blue-100">Promouvoir le vivre-ensemble et renforcer les liens entre les différentes communautés de la capitale.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-800 p-8 rounded-lg max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold mb-4 text-center">Stratégie de développement</h3>
+                <p class="mb-4">Le Gouvernorat travaille en étroite collaboration avec les six communes du District pour :</p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-yellow-400 mt-1 mr-2"></i>
+                        <span>Répondre aux besoins essentiels des populations</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-yellow-400 mt-1 mr-2"></i>
+                        <span>Renforcer la gouvernance de proximité</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-yellow-400 mt-1 mr-2"></i>
+                        <span>Promouvoir un cadre de vie sain et sécurisé</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-yellow-400 mt-1 mr-2"></i>
+                        <span>Encourager l'inclusion sociale et économique</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Nous Contacter</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-900">Coordonnées</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-blue-700 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Adresse</h4>
+                                    <p class="text-gray-600">Hamdallaye ACI 2000, en face du Patronat<br>Bamako, Mali</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-700 mr-4 mt-1">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Téléphone</h4>
+                                    <p class="text-gray-600">+223 20 23 99 71</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-700 mr-4 mt-1">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">contact@gouv-bamako.ml</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-700 mr-4 mt-1">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Horaires d'ouverture</h4>
+                                    <p class="text-gray-600">Lundi à Vendredi: 8h00 - 16h00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-3">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-blue-700 hover:text-blue-900 text-2xl">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="text-blue-700 hover:text-blue-900 text-2xl">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="text-blue-700 hover:text-blue-900 text-2xl">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="text-blue-700 hover:text-blue-900 text-2xl">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-900">Envoyez-nous un message</h3>
+                        
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Nom complet</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Sujet</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300 w-full">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-900">Localisation</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.069804543022!2d-8.00288942473092!3d12.650345585674042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM5JzAxLjMiTiA4wrAwMCcxMC40Ilc!5e1!3m2!1sfr!2sml!4v1624456789012!5m2!1sfr!2sml" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Gouvernorat du District de Bamako</h3>
+                    <p class="text-blue-200">Autorité administrative déconcentrée de l'État, incarnant la présence de l'État au cœur de la capitale malienne.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-lg">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-blue-200 hover:text-white">Accueil</a></li>
+                        <li><a href="#apropos" class="text-blue-200 hover:text-white">À Propos</a></li>
+                        <li><a href="#missions" class="text-blue-200 hover:text-white">Nos Missions</a></li>
+                        <li><a href="#bibliotheques" class="text-blue-200 hover:text-white">Bibliothèques & Archives</a></li>
+                        <li><a href="#vision" class="text-blue-200 hover:text-white">Notre Vision</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-lg">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Administration</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Urbanisme</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Sécurité</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Développement local</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Documents officiels</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-lg">Newsletter</h4>
+                    <p class="text-blue-200 mb-4">Abonnez-vous pour recevoir nos actualités.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 py-2 rounded-r-lg font-medium">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="mt-4">
+                        <h5 class="font-medium mb-2">Suivez-nous</h5>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-200 hover:text-white text-xl">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="text-blue-200 hover:text-white text-xl">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-blue-200 hover:text-white text-xl">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-blue-200 hover:text-white text-xl">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+                <p>&copy; 2023 Gouvernorat du District de Bamako. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion des erreurs d'images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    console.log('Erreur de chargement:', this.src);
+                    this.style.opacity = '0.3';
+                    this.style.filter = 'grayscale(100%)';
+                });
+                
+                img.addEventListener('load', function() {
+                    console.log('Image chargée avec succès:', this.src);
+                    this.style.opacity = '1';
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Highlight active section in navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-section');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-section');
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show an alert
+                alert(`Merci pour votre message, ${name}! Nous vous contacterons bientôt.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
